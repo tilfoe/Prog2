@@ -17,3 +17,6 @@ Programm nimmt alle Produkte welche unter diesen Namen fallen und listet sie auf
 
 ### Datenausgabe
 Produkt und Ablaufdatum
+
+### Ablaufdiagramm
+![alt text](https://github.com/tilfoe/Prog2/blob/master/diagramm.png)
