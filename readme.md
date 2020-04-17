@@ -1,22 +1,22 @@
 # Projektbeschreibung
 
 ## Projektbeschreibung
-Foodwaste entgegenwirken, bevor abgelaufenen Produkte im Laden entsorgt werden.
+Notiz Applikation, ich nutze häufig die Notiz Funktion auf dem Iphone oder Mac, da ich aber im Geschäft nicht mit Mac arbeite, gehen meine Einkaufsnotizen oder Trainingspläne für die Athleten schnell vergessen.
 
 ## Funktion / Projektidee
-Programm, welches dem Laden anzeigt, wann ein Produkt abläuft
+Programm, welches erlaubt Notizen zu erstellen. 
 
 ## Workflow
 
 
 ### Dateneingabe
-Name von Produkt
+Notizen eingeben
 
 ### Datenverarbeitung/Speicherung
-Programm nimmt alle Produkte welche unter diesen Namen fallen und listet sie auf
+Programm nimmt den Text und erstellt ein Notizzettel mit dem Text, diese werden alphabetisch sortiert.
 
 ### Datenausgabe
-Produkt und Ablaufdatum
+Programm gibt einen Notizzettel mit dem eingegebene Text her
 
 ### Ablaufdiagramm
-![alt text](https://github.com/tilfoe/Prog2/blob/master/diagramm.png)
+![alt text](https://github.com/tilfoe/Prog2/blob/master/Diagramm.jpg)
