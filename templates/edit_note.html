@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	{% include "header.html" %}
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">Notes App</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('index') }}">Notizübersicht</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('create_note') }}">Notiz hinzufügen</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container-fluid mt-4">
+			<h1>Notiz editieren: </h1>
+			{% if not note %}
+				<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					<strong>Upps!</strong> Die Notiz existiert nicht.
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			{% elif note_already_exists %}
+				<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					<strong>Upps!</strong> Die Notiz mit diesem Titel existiert bereits.
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			{% else %}
+				<form method="POST">
+					<div class="form-group">
+						<label for="note-titel">Titel</label>
+						<input type="text" class="form-control" id="note-titel" name="note-titel" value="{{ note['titel'] }}" required>
+					</div>
+					<div class="form-group">
+						<label for="note-text">Text</label>
+						<textarea class="form-control" id="note-text" name="note-text" rows="3" required>{{ note['text'] }}</textarea>
+					</div>
+					<button type="submit" class="btn btn-primary">Speichern</button>
+				</form>
+			{% endif %}
+		</div>
+	</body>
+</html>
