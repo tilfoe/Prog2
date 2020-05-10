@@ -15,6 +15,9 @@
 					<li class="nav-item">
 						<a class="nav-link" href="{{ url_for('create_note') }}">Notiz hinzufügen</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('filter_notes') }}">Notizen filtern</a>
+					</li>
 				</ul>
 			</div>
 		</nav>
@@ -27,7 +30,7 @@
 					<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-			{% elif note_already_exists %}
+				{% elif note_already_exists %}
 				<div class="alert alert-danger alert-dismissible fade show" role="alert">
 					<strong>Upps!</strong> Die Notiz mit diesem Titel existiert bereits.
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -43,6 +46,28 @@
 					<div class="form-group">
 						<label for="note-text">Text</label>
 						<textarea class="form-control" id="note-text" name="note-text" rows="3" required>{{ note['text'] }}</textarea>
+					</div>
+					<div class="form-group">
+						<label for="note-tag">Tag</label>
+						<select class="form-control" id="note-tag" name="note-tag">
+							
+							{% if note["tag"] == "Schule" %}
+								<option value="Schule" selected>Schule</option>
+							{% else %}
+								<option value="Schule">Schule</option>
+							{% endif %}
+							{% if note["tag"] == "Arbeit" %}
+								<option value="Arbeit" selected>Arbeit</option>
+							{% else %}
+								<option value="Arbeit">Arbeit</option>
+							{% endif %}
+							{% if note["tag"] == "Freizeit" %}
+								<option value="Freizeit" selected>Freizeit</option>
+							{% else %}
+								<option value="Freizeit">Freizeit</option>
+							{% endif %}
+							
+						</select>
 					</div>
 					<button type="submit" class="btn btn-primary">Speichern</button>
 				</form>

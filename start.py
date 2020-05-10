@@ -33,9 +33,12 @@ def create_note():
 		note_titel = request.form["note-titel"]
 		note_text = request.form["note-text"]
 
+		note_tag = request.form["note-tag"]
+
 		new_note = {
 			"titel": note_titel,
-			"text": note_text
+			"text": note_text,
+			"tag": note_tag
 		}
 
 		# Make sure note titel is unique
@@ -76,7 +79,7 @@ def edit_note(note_titel):
 	if request.method == "POST":
 		new_note_titel = request.form["note-titel"]
 		note_text = request.form["note-text"]
-
+		note_tag = request.form["note-tag"]
 		note_already_exists = False
 		# Prüfe ob der editierte Titel bereits existiert, aber nur wenn sich der Nutzer den Titel editiert hat
 		if note["titel"] != new_note_titel:
@@ -87,11 +90,26 @@ def edit_note(note_titel):
 		if not note_already_exists:
 			note["titel"] = new_note_titel
 			note["text"] = note_text		
+			note["tag"] = note_tag
 			write_data_to_json(notes_json_name, all_notes)
 			return redirect(url_for("index"))
 		# Notiz mit dem Titel existiert bereits
 		return render_template("edit_note.html", note=note, note_already_exists=note_already_exists)
 
 	return render_template("edit_note.html", note=note, note_already_exists=False)
+
+@app.route('/filter_notes', methods=["GET", "POST"])
+def filter_notes(): 
+	if request.method == "POST":
+		note_tag = request.form["note-tag"]
+		all_notes = load_data_from_json(notes_json_name, [])
+		result = []
+		for note in all_notes:
+			if note["tag"] == note_tag:
+				result.append(note)
+		return render_template("index.html", notes=result)
+	return render_template('search.html')
 if __name__ == "__main__":
     app.run(debug=True, port=5000)#
+
+

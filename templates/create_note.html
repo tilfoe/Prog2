@@ -15,6 +15,9 @@
 					<li class="nav-item">
 						<a class="nav-link current" href="#">Notiz hinzufügen <span class="sr-only">(current)</span></a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('filter_notes') }}">Notizen filtern</a>
+					</li>
 				</ul>
 			</div>
 		</nav>
@@ -36,6 +39,14 @@
 				<div class="form-group">
 					<label for="note-text">Text</label>
 					<textarea class="form-control" id="note-text" name="note-text" rows="3" required></textarea>
+				</div>
+				<div class="form-group">
+					<label for="note-tag">Tag</label>
+					<select class="form-control" id="note-tag" name="note-tag">
+						<option value="Schule">Schule</option>
+						<option value="Arbeit">Arbeit</option>
+						<option value="Freizeit">Freizeit</option>
+					</select>
 				</div>
 				<button type="submit" class="btn btn-primary">Notiz hinzufügen</button>
 			</form>
