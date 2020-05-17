@@ -24,7 +24,18 @@ def load_data_from_json(file_name, default_value):
 @app.route('/')
 def index():
 	all_notes = load_data_from_json(notes_json_name, [])
-	return render_template("index.html", notes=all_notes)
+	count_work = 0
+	count_school = 0
+	count_sparetime = 0
+	for note in all_notes: 
+		if note["tag"] == "Schule":
+			count_school += 1
+		elif note["tag"] == "Arbeit":
+			count_work += 1
+		elif note["tag"] == "Freizeit":
+			count_sparetime += 1
+	return render_template("index.html", notes=all_notes, count_school = count_school, count_work = count_work, count_sparetime = count_sparetime)
+
 
 @app.route('/create_note', methods=["GET", "POST"])
 def create_note():

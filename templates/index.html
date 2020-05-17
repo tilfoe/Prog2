@@ -19,7 +19,19 @@
 						<a class="nav-link" href="{{ url_for('filter_notes') }}">Notizen filtern</a>
 					</li>
 				</ul>
+			</div> 
+
+			<div class="navbar"; style="width: 1px; margin-right: 3cm; margin-bottom: -0.5cm">
+				<p>Arbeit: {{count_work}}</p>
 			</div>
+			<div class="navbar"; style="width: 1px; margin-right: 3cm; margin-bottom: -0.5cm">
+				<p>Schule: {{count_school}}</p>
+			</div>
+			<div class="navbar"; style="width: 1px; margin-right: 3cm; margin-bottom: -0.5cm">
+				<p>Freizeit: {{count_sparetime}}</p>
+			</div>
+
+
 		</nav>
 		<div class="container-fluid mt-4">
 			<h1>Notizübersicht: </h1>
@@ -31,11 +43,12 @@
 						<a href="{{ url_for('edit_note', note_titel=note['titel']) }}" class="card-link">Editieren</a>
 						<a href="{{ url_for('delete_note', note_titel=note['titel']) }}" class="card-link">Löschen</a>
 					</div>
+				
+					
 				</div>
 			{% endfor %}
-			
-			
-			
+		
 		</div>
+		
 	</body>
 </html>
