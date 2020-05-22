@@ -19,4 +19,6 @@ Programm nimmt den Text und erstellt ein Notizzettel mit dem Text, diese werden 
 Programm gibt einen Notizzettel mit dem eingegebene Text her
 
 ### Ablaufdiagramm
-![alt text](https://github.com/tilfoe/Prog2/blob/master/Diagramm.jpg)
+![alt text](https://github.com/tilfoe/Prog2/blob/master/Diagramm.png)
+
+
