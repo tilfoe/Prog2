@@ -4,4 +4,36 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
 	<script type="text/javascript" src="{{ url_for('static', filename='bootstrap/js/jquery-3.4.1.slim.min.js') }}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">Notes App</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<a class="nav-link" href="{{ url_for('index') }}">Notizübersicht</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('create_note') }}">Notiz hinzufügen</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('filter_notes') }}">Notizen filtern</a>
+					</li>
+				</ul>
+			</div> 
+
+			<div class="navbar"; style="width: 1px; margin-right: 3cm; margin-bottom: -0.5cm">
+				<p>Arbeit: {{count_work}}</p>
+			</div>
+			<div class="navbar"; style="width: 1px; margin-right: 3cm; margin-bottom: -0.5cm">
+				<p>Schule: {{count_school}}</p>
+			</div>
+			<div class="navbar"; style="width: 1px; margin-right: 3cm; margin-bottom: -0.5cm">
+				<p>Freizeit: {{count_sparetime}}</p>
+			</div>
+
+
+		</nav>
 </head>
