@@ -3,9 +3,21 @@
 	{% include "header.html" %}
 	
 	<body>
+
+		<table class="table"; style="width: 100%; margin-bottom: 0.5cm">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col"; style="width: 4cm">Anzahl Notizen:</th>
+					<th scope="col">Arbeit: {{count_work}} </th>
+					<th scope="col">Schule: {{count_school}}</th>
+					<th scope="col">Freizeit: {{count_sparetime}}</th>
+				</tr>
+			</thead>
+		</table>
+
 		
 		<div class="container-fluid mt-4">
-			<h3>your notes: </h3>
+			<h3>deine Notizen: </h3>
 			{% for note in notes %}
 				<div class="card" style="width: 18rem; margin: 0.2cm; float:left; background-color: #FFAD33">
 					<div class="card-body">

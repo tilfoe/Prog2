@@ -35,7 +35,7 @@ def index():
 		elif note["tag"] == "Freizeit":
 			count_sparetime += 1
 	return render_template("index.html", notes=all_notes, count_school = count_school, count_work = count_work, count_sparetime = count_sparetime)
-
+	
 
 @app.route('/create_note', methods=["GET", "POST"])   #URL wird erstellt um Eingabeformular aufzurufen, die Methode wird angegeben in deisem Fall "Get" & "Post"
 def create_note():
